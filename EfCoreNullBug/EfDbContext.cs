@@ -53,6 +53,8 @@ namespace EfCoreNullBug
             yield return City;
             yield return PostalCode;
             yield return Country;
+            yield return HouseType;
+            yield return IsMobile;
         }
     }
 
