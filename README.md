@@ -1,11 +1,10 @@
 # MRE EF Core Null Bug
 
 ## Setup
-Make a copy of `appsettings.default.json` to `appsettings.json` and set relevant database credentials
+Go into `EfCoreNullBug`, then make a copy of `appsettings.default.json` to `appsettings.json` and set relevant database credentials.
 
-Run the following:
+Run the following in the `EfCoreNullbug` directory
 ```
-cd EfCoreNullBug
 dotnet ef migrations add <NAME>
 dotnet ef migrations update
 ```

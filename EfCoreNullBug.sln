@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EfCoreNullBug", "EfCoreNullBug\EfCoreNullBug.csproj", "{2991FE01-2AFF-4679-93D1-5DCA3C8DE44B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EfCoreNullBug", "EfCoreNullBug\EfCoreNullBug.csproj", "{2991FE01-2AFF-4679-93D1-5DCA3C8DE44B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9A8891CD-3810-4683-A139-D52062812EF8}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
