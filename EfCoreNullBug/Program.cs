@@ -1,4 +1,5 @@
-﻿using EfCoreNullBug;
+﻿using System.Text.Json;
+using EfCoreNullBug;
 using Microsoft.Extensions.Configuration;
 using static System.Console;
 var configuration = new ConfigurationBuilder()
@@ -26,15 +27,15 @@ try
     db.SaveChanges();
 
     //read
-    var pers = db.Persons.SingleOrDefault(o => o.Id == 1);
-
+    Person p = db.Persons.SingleOrDefault(o => o.Id == 1);
+    WriteLine($"Person: {JsonSerializer.Serialize(p)}");
     //update
-    pers.Name = "You";
-    pers.Age = 1000;
+    p.Name = "You";
+    p.Age = 1000;
     db.SaveChanges();
 
     //delete
-    db.Remove(pers);
+    db.Remove(p);
     db.SaveChanges();
 }
 catch (Exception e)
