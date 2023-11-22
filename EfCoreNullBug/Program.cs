@@ -15,19 +15,19 @@ var connectionString = $"Server={dbServer};Port={dbPort};Database={dbDatabase};U
 try
 {
     using var db = new EfDbContext(connectionString);
-
-    //create
-    db.Add(new Person
+    Person p = new Person
     {
         Id = 1,
         // XXX Ignoring this property string value will throw 23502: null value in column "Name" of relation "Persons" violates not-null constraint DETAIL: Failing row contains(1, null, , , , , null, 0, f).
-        Name = "Me",
+        //Name = "Me",
         // However, value object "Address" without initialized doesn't throw. Why is there such different behaviour?
-    });
+    };
+    //create
+    db.Add(p);
     db.SaveChanges();
 
     //read
-    Person p = db.Persons.SingleOrDefault(o => o.Id == 1);
+    p = db.Persons.SingleOrDefault(o => o.Id == 1);
     WriteLine($"Person: {JsonSerializer.Serialize(p)}");
     //update
     p.Name = "You";
